@@ -35,7 +35,12 @@ namespace MahAppsMetroHamburgerMenuNavigation
                 {
                     var view = new AboutView();
                     view.ShowDialog();
-                    SelectMenuItem(((Frame)HamburgerMenuControl.Content).Content);
+
+                    // Tell the HamburgerMenu that you already handled the ItemInvoke, so this MenuItem will never get selected. 
+                    e.Handled = true;
+
+                    // We do not need this line.
+                    // SelectMenuItem(((Frame)HamburgerMenuControl.Content).Content);
                 }
                 else
                 {
